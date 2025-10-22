@@ -1,0 +1,58 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		// clean the build directory
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}\\build",
+				"--target",
+				"clean"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		// If it hasn't been created yet, use cmake to create the build directory
+		{
+			"label": "cmake",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"-S",
+				".",
+				"-B",
+				"${workspaceFolder}\\build",
+				"-G",
+				"MinGW Makefiles"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		// Use makefile in build directory to build the project
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"-j",
+				"-C",
+				"${workspaceFolder}\\build"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"detail": "Generated task by Makefile"
+		}
+	]
+}

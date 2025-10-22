@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(hello)
+project(empty_template)
 
 # set the output directory for built objects.
 # This make sure that the dynamic library goes into the build directory automatically.
@@ -9,6 +9,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 add_subdirectory(vendors/SDL EXCLUDE_FROM_ALL)
 
 include_directories(${CMAKE_SOURCE_DIR}/vendors/imgui)
+include_directories(${CMAKE_SOURCE_DIR}/vendors/stb)
 
 file(GLOB SOURCES "src/*.cpp")
 

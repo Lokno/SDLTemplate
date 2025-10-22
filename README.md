@@ -1,1 +1,1 @@
-Template for a basic SDL3 with ImGui aplication.
+Template Project C/C++ combining SDL3 and imgui. Also includes stb header libraries.

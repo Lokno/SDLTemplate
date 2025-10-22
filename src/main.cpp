@@ -23,8 +23,8 @@ int main(int argc, char* argv[]) {
 		return SDL_APP_FAILURE;
 	}
 
-	if(!SDL_CreateWindowAndRenderer("Hello", 800, 600, 0, &as->window, &as->renderer)) {
-		SDL_Log("Couldn't craete window and renderer: %s\n", SDL_GetError());
+	if(!SDL_CreateWindowAndRenderer("Empty Project Template", 800, 600, 0, &as->window, &as->renderer)) {
+		SDL_Log("Couldn't create window and renderer: %s\n", SDL_GetError());
 		return SDL_APP_FAILURE;
 	}
 
@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
 
 		// Render
 		ImGui::Render();
-		SDL_SetRenderDrawColor(as->renderer, 255, 0, 0, 255);
+		SDL_SetRenderDrawColor(as->renderer, 138, 118, 145, 255);
 		SDL_RenderClear(as->renderer);
 		ImGui_ImplSDLRenderer3_RenderDrawData(ImGui::GetDrawData(), as->renderer);
 		SDL_RenderPresent(as->renderer);
